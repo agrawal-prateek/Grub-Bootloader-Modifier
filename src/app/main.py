@@ -7,7 +7,7 @@ import json
 sys.path.append(json.loads(open('paths.json', 'r').read())['root_path'])
 
 from src.app.data import *
-from src.app.tab1 import create_tab1, create_emulator_image, get_emulator_image_path
+from src.app.tab1 import create_tab1
 from src.app.tab2 import create_tab2
 from src.app.tab3 import create_tab3
 from src.app.tab4 import create_tab4

@@ -1,3 +1,4 @@
 {
-  "root_path" : "/home/prateek/Google Drive/projects/Grub Modifier"
+  "root_path" : "/home/prateek/Google-Drive/projects/Grub-Bootloader-Modifier",
+  "grub_file" : "/etc/default/grub"
 }

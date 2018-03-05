@@ -3,10 +3,36 @@ from tkinter import *
 from src.app.data import *
 from PIL import Image
 import os
+import json
 
 
 def get_emulator_image_path():
-    data['emulator_image'] = '/boot/grub2/themes/openSUSE/background.png'
+    path_file = open("paths.json", "r")
+    paths = path_file.read()
+    grubfile = json.loads(paths)['grub_file']
+    path_file.close()
+    grubfile = open(grubfile,"r")
+    grubfiledata = grubfile.read()
+    grubfile.close()
+    GRUB_BACKGROUND=None
+    if 'GRUB_BACKGROUND' in grubfiledata:
+        GRUB_BACKGROUND = re.search('%s(.*)%s' % ('GRUB_BACKGROUND=', '\n'), grubfiledata).group(1)
+    else:
+        grubtheme = re.search('%s(.*)%s' % ('GRUB_THEME=', '\n'), grubfiledata).group(1)
+        grubthemefile = open(grubtheme, "r")
+        grubthemedata = grubthemefile.read()
+        data['grubthemedata'] = grubthemedata
+        grubthemefile.close()
+        GRUB_BACKGROUND = re.search('%s(.*)%s' % ('desktop-image: "', '"'), grubthemedata).group(1)
+        index = 0
+        for i in range(len(grubtheme) - 1, -1, -1):
+            if grubtheme[i] == '/':
+                index = i+1
+                break
+        GRUB_BACKGROUND = grubtheme[0:index] + GRUB_BACKGROUND
+        print(GRUB_BACKGROUND)
+
+    data['emulator_image'] = GRUB_BACKGROUND
 
 
 def create_emulator_image():
@@ -53,4 +79,3 @@ def create_tab1():
     background.update()
     data['background'] = background
     data['tab1_background_image'] = background_image
-
