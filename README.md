@@ -9,13 +9,36 @@ Grub-Bootloader-Modifier is a Linux Software which can be used to customize boot
 - Tkinter
 - Grub-mkfont
 - Pillow
+- Pip3
 
 ### Customizations
--
+
 - Change Grub themes of system
 - Customize or make your own Grub theme
 - Customize bootloader settings
 - See realtime output in simulator
+
+### Installation
+
+- Install Python3
+
+    sudo apt-get install python3
+    
+- Install `pip3`
+
+    sudo apt-get install python3-pip
+
+- Install `Tkinter`
+
+    sudo pip3 install python3-tk
+
+- Install `Pillow`
+
+    sudo pip3 insatll pillow
+    
+- Install `Grub-Mkfont`
+
+    sudo apt-get install grub-mkfont
 
 
 For any query, feel free and contact me
