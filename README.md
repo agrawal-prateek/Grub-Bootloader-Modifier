@@ -22,23 +22,23 @@ Grub-Bootloader-Modifier is a Linux Software which can be used to customize boot
 
 - Install Python3
 
-    sudo apt-get install python3
+        sudo apt-get install python3
     
 - Install `pip3`
 
-    sudo apt-get install python3-pip
+        sudo apt-get install python3-pip
 
 - Install `Tkinter`
 
-    sudo pip3 install python3-tk
+        sudo pip3 install python3-tk
 
 - Install `Pillow`
 
-    sudo pip3 insatll pillow
+        sudo pip3 insatll pillow
     
 - Install `Grub-Mkfont`
 
-    sudo apt-get install grub-mkfont
+        sudo apt-get install grub-mkfont
 
 
 For any query, feel free and contact me
